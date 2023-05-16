@@ -16,11 +16,6 @@ def show_users():
 
 @app.route("/users/create", methods=['POST'])
 def create():
-    data = {
-        "first_name": request.form["first_name"],
-        "last_name": request.form["last_name"],
-        "email": request.form["email"]
-    }
     User.save(request.form)
     return redirect('/users')
 
@@ -30,14 +25,8 @@ def show(user_id):
     user = User.get_one(user_id)
     return render_template("user_card.html", user=user)
 
-
 @app.route("/users/update", methods=['POST'])
 def update():
-    data = {
-        "first_name": request.form["first_name"],
-        "last_name": request.form["last_name"],
-        "email": request.form["email"]
-    }
     User.update(request.form)
     return redirect('/users')
 
