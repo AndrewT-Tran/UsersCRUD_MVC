@@ -1,5 +1,6 @@
-from flask_app.controllers import userz
 from flask_app import app
+from flask_app.controllers import userz
+
 # ...server.py
 
 
