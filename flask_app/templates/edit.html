@@ -18,20 +18,22 @@
         <!-- place navbar here -->
     </header>
     <div class="position-absolute top-0 start-50 translate-middle-x p-5">
-        <form action="/users/update" method="post" class="pb-2 container border rounded-3 border-success border-3 p-3">
+        <form action="/users/update" method="post" class="pb-2 container border rounded-3 border-success border-subtle border-3 p-3">
             <h2 class="text-center">Edit {{user.first_name}} info</h2>
+
             <input type="hidden" name="id" value={{user.id}}>
+
             <div class="form-group">
                 <label for="first_name">First Name:</label>
-                <input type="text" name="first_name" class="form-control" value="{{user.first_name}}">
+                <input type="text" name="first_name" class="form-control border border-success border-1 my-1" value="{{user.first_name}}">
             </div>
             <div class="form-group">
                 <label for="last_name">Last Name:</label>
-                <input type="text" name="last_name" class="form-control" value="{{user.last_name}}">
+                <input type="text" name="last_name" class="form-control border border-success border-1 my-1" value="{{user.last_name}}">
             </div>
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="text" name="email" class="form-control" value="{{user.email}}">
+                <input type="text" name="email" class="form-control border border-success border-1 my-1" value="{{user.email}}">
             </div>
             <input type="submit" value="Update User" class="btn btn-outline-success outline-2 mt-3 mb-3">
         </form>
