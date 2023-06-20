@@ -9,15 +9,15 @@
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 
-<body class="bg-dark">
+<body class="bg-dark-subtle">
 
   <main>
-    <div class="container-fluid bg-danger p-4">
+    <div class="container-xl bg-danger p-4">
       <div class="row text-bg-danger p-2 my-2" style="text-align: center">
         <h1>All Users</h1>
       </div>
       <div class="table-responsive danger">
-        <table class="table table-danger border border-3 border-dark rounded-5 table-hover table-striped" style="text-align: center">
+        <table class="table table-danger border border-3 border-dark rounded-5 table-hover table-striped" style="text-align: center;">
           <thead class="bg-body bg-info-subtle">
             <tr>
               <th scope="col" style="color: rgb(99, 98, 98)">ID</th>
@@ -29,15 +29,15 @@
           </thead>
           <tbody>
             {% for user in users %}
-            <tr scope='row'>
+            <tr class="text-primary"scope='row'>
               <td>{{user.id}}</td>
               <td>{{user.first_name}}</td>
               <td>{{user.last_name}}</td>
               <td>{{user.email}}</td>
               <td>
-                <a href="/users/show/{{user.id}}">Show</a> |
-                <a href="/users/edit/{{user.id}}">Edit</a> |
-                <a href="/users/delete/{{user.id}}">Delete</a>
+                <a class="text-info" href="/users/show/{{user.id}}">Show</a> |
+                <a class="text-danger" href="/users/edit/{{user.id}}">Edit</a> |
+                <a class="text-success" href="/users/delete/{{user.id}}">Delete</a>
               </td>
             </tr>
 

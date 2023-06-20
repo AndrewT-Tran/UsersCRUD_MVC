@@ -30,7 +30,7 @@ class User:
     def get_all(cls):
         query = "SELECT * FROM users;"
         # make sure to call the connectToMySQL function with the schema you are targeting.
-        results = connectToMySQL('mydb').query_db(query)
+        results = connectToMySQL(cls.DB).query_db(query)
         # Create an empty list to append our instances of friends
         all_users = []
         # this will give us the row
@@ -65,9 +65,9 @@ class User:
         query = "DELETE FROM mydb.users WHERE id = %(id)s;"
         data = {"id": user_id}
         return connectToMySQL(cls.DB).query_db(query, data)
-    @staticmethod
-    def edit(user_id):
-        query = "SELECT * FROM users WHERE id = %(id)s;"
-        data = {"id": user_id}
-        result = connectToMySQL('mydb').query_db(query, data)
-        return result
+    # @staticmethod
+    # def edit(user_id):
+    #     query = "SELECT * FROM users WHERE id = %(id)s;"
+    #     data = {"id": user_id}
+    #     result = connectToMySQL('mydb').query_db(query, data)
+    #     return result
